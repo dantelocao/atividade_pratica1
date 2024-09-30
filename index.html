@@ -31,7 +31,17 @@
 
 <main>
     <h2>Projetos</h2>
-    <p>Aqui estarão os meus projetos de sistemas de informação e desenvolvimento de jogos!</p>
+    <ul id="project-list">
+        <li><a href="#" data-src="pong/index.html">Pong</a></li>
+        <li><a href="#" data-src="mycube/index.html">Cubo (Projeto Unity)</a></li>
+    </ul>
+
+    <!-- Contêiner do Unity -->
+    <div id="unity-container">
+        <iframe id="project-frame" src="mycube/index.html" width="600" height="600" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <h3>Entre em fullscream para melhor visualização</h3>
 </main>
 
 <footer>
@@ -41,6 +51,21 @@
         <a href="tel:+5513981020350">(13) 98102-0350</a>
     </p>
 </footer>
+
+<script>
+    // Seleciona todos os links da lista de projetos
+    const projectLinks = document.querySelectorAll('#project-list a');
+    const iframe = document.getElementById('project-frame');
+
+    // Função para atualizar o iframe com o projeto selecionado
+    projectLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do link
+            const projectSrc = this.getAttribute('data-src'); // Obtém o valor do data-src
+            iframe.src = projectSrc; // Atualiza o src do iframe
+        });
+    });
+</script>
 
 </body>
 </html>
