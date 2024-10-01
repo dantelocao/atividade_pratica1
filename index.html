@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Dante</title>
-    <link rel="stylesheet" href="style.css"> <!-- Conecte ao CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,7 +14,6 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="htmldict.html">Html_dict</a></li>
-            <li><a href="cssdict.html">Css_dict</a></li>
         </ul>
     </nav>
 </header>
@@ -34,9 +33,10 @@
     <ul id="project-list">
         <li><a href="#" data-src="pong/index.html">Pong</a></li>
         <li><a href="#" data-src="mycube/index.html">Cubo</a></li>
+        <li><a href="#" data-src="application/index.html">ClickyCrates</a></li>
+        <li><a href="#" data-src="horrorMap/index.html">HorrorMap</a></li>
     </ul>
 
-    <!-- Contêiner do Unity -->
     <div id="unity-container">
         <iframe id="project-frame" src="mycube/index.html" width="600" height="600" frameborder="0" allowfullscreen></iframe>
     </div>
@@ -53,16 +53,16 @@
 </footer>
 
 <script>
-    // Seleciona todos os links da lista de projetos
+    // seleciona todos os links da lista de projetos
     const projectLinks = document.querySelectorAll('#project-list a');
     const iframe = document.getElementById('project-frame');
 
-    // Função para atualizar o iframe com o projeto selecionado
+    // funcao para atualizar o iframe com o projeto selecionado
     projectLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault(); // Impede o comportamento padrão do link
-            const projectSrc = this.getAttribute('data-src'); // Obtém o valor do data-src
-            iframe.src = projectSrc; // Atualiza o src do iframe
+            event.preventDefault(); // impede o comportamento padrão do link
+            const projectSrc = this.getAttribute('data-src'); // obtem o valor do data-src
+            iframe.src = projectSrc; // atualiza o src do iframe
         });
     });
 </script>
